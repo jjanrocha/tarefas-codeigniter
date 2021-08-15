@@ -14,7 +14,7 @@ class Tarefa extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = true;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['tarefa'];
+	protected $allowedFields        = ['tarefa', 'data_limite_conclusao'];
 
 	// Dates
 	protected $useTimestamps        = true;
@@ -25,7 +25,8 @@ class Tarefa extends Model
 
 	// Validation
 	protected $validationRules      = [
-		'tarefa' => 'required|min_length[3]'
+		'tarefa' => 'required|min_length[3]',
+		'data_limite_conclusao' => 'required'
 	];
 	protected $validationMessages   = [
 		'required' => 'O campo {field} é de preenchimento obrigatório.',
