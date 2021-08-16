@@ -32,7 +32,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+//$routes->get('/', 'Home::index');
+	$routes->get('/', 'Tarefacontroller::index');
+	$routes->get('tarefas/new', 'Tarefacontroller::new');
+	$routes->post('tarefas', 'Tarefacontroller::create');
+	$routes->get('tarefas/(:num)', 'Tarefacontroller::show/$1');
+	$routes->get('tarefas/edit/(:num)', 'Tarefacontroller::edit/$1');
+	$routes->put('tarefas/(:num)', 'Tarefacontroller::update/$1');
+	$routes->delete('tarefas/(:num)', 'Tarefacontroller::delete/$1');
 
 /*
  * --------------------------------------------------------------------

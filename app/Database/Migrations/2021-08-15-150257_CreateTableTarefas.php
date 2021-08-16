@@ -19,11 +19,12 @@ class CreateTableTarefas extends Migration
 				'constraint' => 120
 			],
 			'data_limite_conclusao' => [
-				'type' => 'datetime'
+				'type' => 'VARCHAR',
+				'constraint' => 20
 			],
 			'created_at datetime default current_timestamp',
-            'updated_at datetime default current_timestamp on update current_timestamp',
-			'delete_at datetime'
+            'updated_at datetime',
+			'deleted_at datetime'
 		]);
 
 		//criação da tabela tarefas
